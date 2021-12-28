@@ -47,10 +47,11 @@ button {
     justify-content: center;
 }
 
-.vertical-container {
+.container {
     width: 100%;
     padding: 40px;
     display: flex;
+    justify-content: space-between;
 }
 
 #search-bar {
@@ -77,6 +78,33 @@ button {
     font-size: 22px;
     color: white;
     background-color: #333;
+}
+
+#unit-toggle {
+    align-self: flex-start;
+    display: flex;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #333;
+}
+
+#unit-toggle .active {
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: #666;
+    color: white;
+}
+
+#unit-toggle button {
+    width: 125px;
+    border-radius: 0;
+    font-size: 22px;
+    background-color: #333;
+    border: none;
+    color: #444;
+    cursor: pointer;
 }
 
 #info-bar {
@@ -143,7 +171,7 @@ img {
 }
 
 .location-name {
-    background-color: black;
+    background-color: white;
     justify-content: flex-end;
     padding: 30px;
 
@@ -151,5 +179,6 @@ img {
 
 .location-name h3 {
     text-align: center;
-    color: yellow;
+    color: #333;
+    font-weight: 900;
 }
