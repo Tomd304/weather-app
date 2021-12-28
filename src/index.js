@@ -25,27 +25,35 @@ async function getWeather() {
 }
 
 function updateDOM() {
-  getWeather().then((data) => {
-    let degString = units == "metric" ? "\xB0" : "\xB0" + "F";
-    let currentTemp = document.querySelector("#current-temp");
-    currentTemp.textContent = `Current: ${
-      Math.round(data.main.temp) + degString
-    }`;
-    let maxTemp = document.querySelector("#max-temp");
-    maxTemp.textContent = `Max: ${Math.round(data.main.temp_max) + degString}`;
-    let minTemp = document.querySelector("#min-temp");
-    minTemp.textContent = `Min: ${Math.round(data.main.temp_min) + degString}`;
-    let windSpeed = document.querySelector("#wind-speed");
-    windSpeed.textContent = `${
-      Math.round(data.wind.speed) + (units == "metric" ? " m/s" : " mph")
-    } `;
-    let windDirection = document.querySelector("#wind-direction");
-    windDirection.textContent = `${Math.round(data.wind.deg)}\xB0`;
-    let directionImg = document.querySelector("#wind-arrow");
-    directionImg.style.transform = `rotate(${data.wind.deg}deg)`;
-    let city = document.querySelector("#city-header");
-    city.textContent = data.name;
-  });
+  getWeather()
+    .then((data) => {
+      let degString = units == "metric" ? "\xB0" : "\xB0" + "F";
+      let currentTemp = document.querySelector("#current-temp");
+      currentTemp.textContent = `Current: ${
+        Math.round(data.main.temp) + degString
+      }`;
+      let maxTemp = document.querySelector("#max-temp");
+      maxTemp.textContent = `Max: ${
+        Math.round(data.main.temp_max) + degString
+      }`;
+      let minTemp = document.querySelector("#min-temp");
+      minTemp.textContent = `Min: ${
+        Math.round(data.main.temp_min) + degString
+      }`;
+      let windSpeed = document.querySelector("#wind-speed");
+      windSpeed.textContent = `${
+        Math.round(data.wind.speed) + (units == "metric" ? " m/s" : " mph")
+      } `;
+      let windDirection = document.querySelector("#wind-direction");
+      windDirection.textContent = `${Math.round(data.wind.deg)}\xB0`;
+      let directionImg = document.querySelector("#wind-arrow");
+      directionImg.style.transform = `rotate(${data.wind.deg}deg)`;
+      let city = document.querySelector("#city-header");
+      city.textContent = data.name;
+    })
+    .catch((err) => {
+      console.log("nope");
+    });
 }
 
 let metricBtn = document.querySelector("#metric-btn");
