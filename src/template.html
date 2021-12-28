@@ -1,12 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 </head>
+
 <body>
-    <p>hi</p>
+    <div class="header">
+        <h2>weatherApp</h2>
+    </div>
+    <div class="content">
+        <div class='vertical-container'>
+            <div id='search-bar'>
+                <input type="text" placeholder="location:" required id="location-input" />
+                <button type="button" id="location-btn">Search</button>
+            </div>
+        </div>
+
+        <div id='info-bar'>
+
+            <div class='bar-row'>
+                <div class='block'>
+                    <p class='block-title' id='current-temp'></p>
+                    <div class='block-sub-title'>
+                        <p id='max-temp'></p>
+                        <p id='min-temp'></p>
+                    </div>
+                    <img src='./imgs/cloud.png'>
+                </div>
+                <div class='block'>
+                    <p class='block-title'>Wind Speed</p>
+                    <p class='block-sub-title' id='wind-speed'></p>
+                    <img src='./imgs/cloud-wind.png'>
+                </div>
+                <div class='block'>
+                    <p class='block-title'>Wind Direction</p>
+                    <p class='block-sub-title' id='wind-direction'></p>
+                    <img src='./imgs/arrow.png' id='wind-arrow'>
+                </div>
+                <div class='block location-name'>
+                    <h3 id='city-header'></h3>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class='footer'>
+        <h2>Tommy3Shot - GITHUB</h2>
+    </div>
 </body>
+
 </html>

@@ -15,6 +15,21 @@ module.exports = {
   devServer: {
     static: "./dist",
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: "file-loader",
+        options: {
+          name: "[path][name].[ext]",
+        },
+      },
+    ],
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/template.html",
